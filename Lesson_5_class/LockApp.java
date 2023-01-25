@@ -13,7 +13,7 @@ public class LockApp {
 
     public static void main(String[] args) throws InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(2);
-        executorService.submit(()->{
+        executorService.submit(() -> {
             write();
             checkAndRelease();
         });
@@ -21,13 +21,13 @@ public class LockApp {
 
     }
 
-    static void write(){
+    static void write() {
         System.out.println("try to get " + lock.tryLock());
         lock.lock();
         list.add("String");
     }
 
-    static void checkAndRelease(){
+    static void checkAndRelease() {
         System.out.println(list.contains("String"));
         lock.unlock();
 
