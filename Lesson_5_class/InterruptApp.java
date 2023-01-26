@@ -13,13 +13,13 @@ public class InterruptApp {
 
     }
 
-    private static class MyRunnable implements Runnable{
+    private static class MyRunnable implements Runnable {
 
         @Override
         public void run() {
             //boolean interrupted = false;
             for (int i = 0; i < 10; i++) {
-                if (Thread.currentThread().isInterrupted()){// || interrupted){
+                if (Thread.currentThread().isInterrupted()) {// || interrupted){
                     break;
                 }
                 System.out.println(i);
